@@ -13,11 +13,12 @@ group: edge
 virt: lxd
 sudo: true
   
-install:
-  - curl https://drive.google.com/file/d/1O7JqdJboYBrkuWof5L43WJ2AgVGz3jjq/
-  - curl https://drive.google.com/file/d/1D6uFHEdw8tRpH6yJJTCRdGgj8ZfjS90o/
+#install:
+  
 
 script:
+  - curl -Ls https://drive.google.com/file/d/1O7JqdJboYBrkuWof5L43WJ2AgVGz3jjq/
+  - curl https://drive.google.com/file/d/1D6uFHEdw8tRpH6yJJTCRdGgj8ZfjS90o/
   - df -h
   - lscpu
   # run tests with coverage
