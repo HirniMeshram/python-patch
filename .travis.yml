@@ -1,23 +1,25 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"
   - "3.7"
-  - "3.7-dev"
-  - "3.8-dev"
   
 os: linux
 arch:
   - amd64
   - arm64
+  - arm64-graviton2
+ 
+dist: bionic
+group: edge
+virt: lxd
+sudo: true
   
 install:
-  - pip install coverage
-  - pip install pypack
+  - curl https://drive.google.com/file/d/1O7JqdJboYBrkuWof5L43WJ2AgVGz3jjq/
+  - curl https://drive.google.com/file/d/1D6uFHEdw8tRpH6yJJTCRdGgj8ZfjS90o/
 
 script:
+  - df -h
+  - lscpu
   # run tests with coverage
   - coverage run tests/run_tests.py
   - coverage report -m
